@@ -6,6 +6,7 @@ import pad from '../utils/pad';
 import mod from '../utils/mod';
 import StateManager from '../states/manager';
 import { KEY_CODES } from '../utils/codes';
+import $ from 'jquery';
 
 const RANGES = {
   HOUR:   { START: 0, END: 2 },
@@ -295,8 +296,8 @@ export default Component.extend({
     this.get("element").value = value;
 
     // trigger standard events in-case anything else is listening
-    this.$().trigger("input");
-    this.$().trigger("change");
+    $(this.element).trigger("input");
+    $(this.element).trigger("change");
   }
 
 });
